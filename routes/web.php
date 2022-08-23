@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\Fornt\CartController;
 use App\Http\Controllers\Fornt\ForntController;
+use App\Http\Controllers\Fornt\LoginController;
+use App\Http\Controllers\Fornt\RegisterController;
+use App\Http\Controllers\Fornt\UserProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
@@ -69,3 +72,17 @@ Route::get('/',[ForntController::class,'index']);
 //cart
 Route::get('/cart',[CartController::class,'index'])->name('cart.index');
 Route::post('/cart/store',[CartController::class,'store'])->name('cart.store');
+
+
+//Register
+route::get('/user/register',[RegisterController::class,'register'])->name('user.register');
+route::post('/user/store',[RegisterController::class,'store'])->name('user.store');
+
+//login
+route::get('/user/login',[LoginController::class,'login'])->name('user.login');
+route::post('/user/login/store',[LoginController::class,'store'])->name('login.store');
+route::get('/user/logout',[LoginController::class,'logout'])->name('user.logout');
+route::get('/user/profile',[UserProfileController::class,'index'])->name('profile.index');
+
+route::get('/user/profile/details',[UserProfileController::class,'show'])->name('profile.details');
+route::get('/user/profile/edit',[UserProfileController::class,'edit'])->name('edit.profile');

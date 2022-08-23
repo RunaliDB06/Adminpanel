@@ -11,7 +11,7 @@ class CartController extends Controller
     return view('Fornt.cart.index');
    }
    public function store(Request $request){
-    Cart::add($request->id, $request->name, $request->price);
+    // Cart::add($request->id, $request->name, $request->price);
     return redirect()->back()->with('msg','Item has been added to car');
    }
 }
